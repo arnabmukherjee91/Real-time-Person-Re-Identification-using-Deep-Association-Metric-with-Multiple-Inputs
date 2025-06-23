@@ -20,13 +20,13 @@ pip install opencv-python imutils numpy pillow
 
 Deep SORT dependencies:
 
-- Clone the [Deep SORT repository](https://github.com/nwojke/deep_sort) or include the `deep_sort` and `tools` folders in your project directory.
+- Clone the repository: () in your project directory.
 
 ## 📌 Introduction
 
 Real-time multiple object tracking (MOT) has gained immense relevance in surveillance, autonomous driving, and smart cities. This project implements a lightweight and efficient person detection and tracking pipeline based on **MobileNet-SSD** for object detection and **Deep SORT** for multi-object tracking.
 
-Inspired by the methodology presented in *"Real-Time Multiple Object Tracking Using Deep SORT with YOLOv4"* by Chembilan et al. (2021), we integrate a fast and lightweight detector with an appearance-based tracker to achieve robust tracking with low computational overhead. While the paper uses YOLOv4, our implementation substitutes it with MobileNet-SSD for faster inference on resource-constrained devices.
+Inspired by the methodology presented in *"Simple Online and Realtime Tracking with a Deep Association Metric"* by Nicolai Wojke, Alex Bewley, Dietrich Paulus, we integrate a fast and lightweight detector with an appearance-based tracker to achieve robust tracking with low computational overhead. While the paper uses MobileNNetSSD v2, our implementation substitutes it with MobileNet-SSD for faster inference on resource-constrained devices.
 
 ## 🚀 How to Run
 
@@ -42,28 +42,20 @@ Then run the detection and tracking pipeline:
 python demo.py --prototxt MobileNetSSD_deploy.prototxt --model MobileNetSSD_deploy.caffemodel
 ```
 
-Press `Q` to quit the live feed.
+Press `Q` or `Esc`  to quit the live feed.
 
 ## 🎥 Output
 
 The `output_2.avi` file is a sample video showing the result of the tracking algorithm. Tracked persons are marked with unique IDs.
 
-## 🔍 Insights from Reference Paper
 
-- **Detector-Tracker Combination**: The paper combines YOLOv4 with Deep SORT to balance speed and accuracy. In our case, we replace YOLOv4 with MobileNet-SSD for similar real-time performance with a simpler setup.
-
-- **Appearance Features in Tracking**: Deep SORT uses appearance embeddings to associate object identities across frames, significantly improving tracking consistency compared to IoU-based methods alone.
-
-- **Real-Time Performance**: The authors demonstrated real-time processing (30+ FPS) with GPU acceleration, showing the approach is feasible for edge devices and real-world applications.
-
-- **Application Scenarios**: The method has applications in public safety, crowd analysis, and smart surveillance — all relevant to the kind of use cases we target with this implementation.
 
 ## 📚 References
 
-1. Chembilan, Vineeth, et al.  
-   "Real time Person Re–Identification using Deep Association Metric with Multiple Inputs."  
-   *2021 30th Wireless and Optical Communications Conference (WOCC).  
-   [IEEE Link]([https://ieeexplore.ieee.org/abstract/document/9603073](https://ieeexplore.ieee.org/abstract/document/9603073)) | DOI: [10.1109/WOCC53213.2021.9603073]([https://doi.org/10.1109/ICAIS50930.2021.9603073](https://doi.org/10.1109/WOCC53213.2021.9603073))
+1. Nicolai Wojke, Alex Bewley, Dietrich Paulus  
+   "Simple Online and Realtime Tracking with a Deep Association Metric"  
+   *CVPR 2021.  
+   [IEEE Link]((https://arxiv.org/abs/1703.07402)) | DOI: [1703.07402]((https://doi.org/10.48550/arXiv.1703.07402))
 
 > This paper inspired the approach taken in this project. While it uses YOLOv4 for detection, we chose MobileNet-SSD for lighter computation while keeping the Deep SORT tracking framework intact.
 
