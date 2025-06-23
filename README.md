@@ -1,54 +1,51 @@
 
 # Person Detection and Tracking with MobileNet-SSD and Deep SORT
 
-This project implements real-time person detection and tracking using the MobileNet-SSD model and the Deep SORT tracking algorithm. It uses OpenCV and TensorFlow-based tools for object tracking across video frames.
+This project demonstrates a real-time person detection and tracking system using **MobileNet-SSD v2** for fast and lightweight object detection. The tracking is performed using the Deep SORT algorithm. It uses OpenCV and TensorFlow-based tools for object tracking across video frames.
 
-## 📂 Files
+## 🌐 MQTT-Based Feature Sharing
 
-- `demo.py` — Main script for video stream processing, object detection, and tracking.
-- `MobileNetSSD_deploy.caffemodel` — Pre-trained Caffe model for person detection.
-- `output_2.avi` — Sample output video showing tracking results.
-- `model_data/mars-small128.pb` — (Required) Deep SORT feature extractor model.
+A key innovation in this project is the use of **MQTT (Message Queuing Telemetry Transport)** protocol to **publish and subscribe to detection features across multiple systems**. This enables distributed tracking and monitoring, where multiple devices can collaborate by exchanging object features over a lightweight, publish-subscribe network.
 
-## 🛠️ Requirements
+### Why MQTT?
 
-Make sure you have the following Python packages installed:
+- 💡 Low-latency communication
+- 📶 Ideal for real-time, bandwidth-efficient applications
+- 🤝 Enables modular and scalable tracking architectures (multi-camera/multi-node)
+
+## 🧠 Model
+
+- **MobileNet-SSD v2** was used for object detection.
+- Chosen for its speed and efficiency on low-power or edge devices.
+- Detects multiple classes but is focused on tracking persons (`person` class) in this application.
+
+## 🛠️ Components
+
+- `demo.py` — Main script for detection, tracking, and MQTT communication.
+- `MobileNetSSD_deploy.caffemodel` — Pre-trained detection model.
+- `output_2.avi` — Sample output video showing the tracking results.
+- `model_data/mars-small128.pb` — Feature encoder for Deep SORT.
+
+## 🚀 Getting Started
+
+Install the dependencies:
 
 ```bash
-pip install opencv-python imutils numpy pillow
+pip install opencv-python imutils numpy pillow paho-mqtt
 ```
 
-Deep SORT dependencies:
-
-- Clone the repository: (https://github.com/arnabmukherjee91/Real-time-Person-Re-Identification-using-Deep-Association-Metric-with-Multiple-Inputs.git) in your project directory.
-
-## 📌 Introduction
-
-Real-time multiple object tracking (MOT) has gained immense relevance in surveillance, autonomous driving, and smart cities. This project implements a lightweight and efficient person detection and tracking pipeline based on **MobileNet-SSD** for object detection and **Deep SORT** for multi-object tracking.
-
-Inspired by the methodology presented in *"Simple Online and Realtime Tracking with a Deep Association Metric"* by Nicolai Wojke, Alex Bewley, Dietrich Paulus, we integrate a fast and lightweight detector with an appearance-based tracker to achieve robust tracking with low computational overhead. While the paper uses MobileNNetSSD v2, our implementation substitutes it with MobileNet-SSD for faster inference on resource-constrained devices.
-
-## 🚀 How to Run
-
-Make sure the following files are present in the working directory:
-
-- `MobileNetSSD_deploy.prototxt`
-- `MobileNetSSD_deploy.caffemodel`
-- `model_data/mars-small128.pb`
-
-Then run the detection and tracking pipeline:
+Make sure to set up an MQTT broker (e.g., Mosquitto), then run:
 
 ```bash
 python demo.py --prototxt MobileNetSSD_deploy.prototxt --model MobileNetSSD_deploy.caffemodel
 ```
 
-Press `Q` or `Esc`  to quit the live feed.
+## 📦 Features
 
-## 🎥 Output
-
-The `output_2.avi` file is a sample video showing the result of the tracking algorithm. Tracked persons are marked with unique IDs.
-
-
+- Real-time detection and tracking of persons.
+- Fast inference using MobileNet-SSD v2.
+- MQTT protocol to publish and subscribe to extracted features.
+- Supports multi-system setups for collaborative tracking.
 
 ## 📚 References
 
@@ -57,7 +54,8 @@ The `output_2.avi` file is a sample video showing the result of the tracking alg
    *CVPR 2021.  
    [IEEE Link]((https://arxiv.org/abs/1703.07402)) | DOI: [1703.07402]((https://doi.org/10.48550/arXiv.1703.07402))
 
-> This paper inspired the approach taken in this project. While it uses YOLOv4 for detection, we chose MobileNet-SSD for lighter computation while keeping the Deep SORT tracking framework intact.
+> This paper inspired the approach taken in this project. We chose MobileNet-SSD for lighter computation while keeping the tracking framework intact.
+> If you liked this project, ypu can help us by citing this work (https://ieeexplore.ieee.org/abstract/document/9603073). 
 
 ## 📄 License
 
