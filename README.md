@@ -61,9 +61,9 @@ The `output_2.avi` file is a sample video showing the result of the tracking alg
 ## 📚 References
 
 1. Chembilan, Vineeth, et al.  
-   "Real-Time Multiple Object Tracking Using Deep SORT with YOLOv4."  
-   *2021 International Conference on Artificial Intelligence and Smart Systems (ICAIS)*. IEEE, 2021.  
-   [IEEE Link](https://ieeexplore.ieee.org/abstract/document/9603073) | DOI: [10.1109/ICAIS50930.2021.9603073](https://doi.org/10.1109/ICAIS50930.2021.9603073)
+   "Real time Person Re–Identification using Deep Association Metric with Multiple Inputs."  
+   *2021 30th Wireless and Optical Communications Conference (WOCC).  
+   [IEEE Link]([https://ieeexplore.ieee.org/abstract/document/9603073](https://ieeexplore.ieee.org/abstract/document/9603073)) | DOI: [10.1109/WOCC53213.2021.9603073]([https://doi.org/10.1109/ICAIS50930.2021.9603073](https://doi.org/10.1109/WOCC53213.2021.9603073))
 
 > This paper inspired the approach taken in this project. While it uses YOLOv4 for detection, we chose MobileNet-SSD for lighter computation while keeping the Deep SORT tracking framework intact.
 
