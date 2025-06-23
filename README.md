@@ -55,7 +55,7 @@ python demo.py --prototxt MobileNetSSD_deploy.prototxt --model MobileNetSSD_depl
    [IEEE Link]((https://arxiv.org/abs/1703.07402)) | DOI: [1703.07402]((https://doi.org/10.48550/arXiv.1703.07402))
 
 > This paper inspired the approach taken in this project. We chose MobileNet-SSD for lighter computation while keeping the tracking framework intact.
-> If you liked this project, ypu can help us by citing this work (https://ieeexplore.ieee.org/abstract/document/9603073). 
+> If you liked this project, you can help us by citing this work (https://ieeexplore.ieee.org/abstract/document/9603073). 
 
 ## 📄 License
 
