@@ -20,7 +20,7 @@ pip install opencv-python imutils numpy pillow
 
 Deep SORT dependencies:
 
-- Clone the repository: () in your project directory.
+- Clone the repository: (https://github.com/arnabmukherjee91/Real-time-Person-Re-Identification-using-Deep-Association-Metric-with-Multiple-Inputs.git) in your project directory.
 
 ## 📌 Introduction
 
